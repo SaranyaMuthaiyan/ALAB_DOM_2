@@ -71,7 +71,7 @@ subMenuEl.style.top = '0';
 //PART 2 Step 4 Adding Menu Interaction
 const topMenuLinks = [];
 function buildSubmenu(subLinks) {
-    subMenuEl.innerHTML = ""; // Clear existing submenu
+    subMenuEl.innerHTML = ""; 
 
     subLinks.forEach(link => {
         const anchor = document.createElement("a");
@@ -90,6 +90,7 @@ topMenuEl.addEventListener("click", function(event) {
     document.querySelectorAll("#topMenuEl a").forEach(link => {
         link.classList.remove("active");
     });
+  
 //PART 2 Step 5 Adding Menu Interaction
 
     // Cache the clicked link object from menuLinks
@@ -98,13 +99,13 @@ topMenuEl.addEventListener("click", function(event) {
     // Toggle "active" class and submenu visibility
     if (event.target.classList.contains("active")) {
         event.target.classList.remove("active");
-        subMenuEl.style.top = "0"; // Hide submenu
+        subMenuEl.style.top = "0"; 
     } else {
         event.target.classList.add("active");
 
         if (clickedLink.subLinks) {
             subMenuEl.style.top = "100%";
-            buildSubmenu(clickedLink.subLinks); // Call the helper function
+            buildSubmenu(clickedLink.subLinks); 
         } else {
             subMenuEl.style.top = "0";
         }
